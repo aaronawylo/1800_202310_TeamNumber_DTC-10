@@ -9,10 +9,11 @@ This browser based web application to ...
 
 List team members and/or short bio's here...
 
-- Hi, my name is Lulu, nice to meet you!
-- ...
-- ...
+* Hi, my name is Lulu, nice to meet you!
+* Hi, my name is Aaron and I am excited to be here in this course!
+* Derek Tran is here 
 
+	
 ## 3. Technologies and Resources Used
 
 List technologies (with version numbers), API's, icons, fonts, images, media or data sources, and other resources that were used.
