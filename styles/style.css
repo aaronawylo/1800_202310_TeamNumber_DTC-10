@@ -15,8 +15,8 @@
 .btn-primary {
     color: white;                           /* contrast to secondary colour */
     font-size: 150%;
-    background-color: #FA9500;                /* some secondary colour */
-    border-color: #eb6424;                    /* some accent colour */
+    background-color: #00b3b3;                /* some secondary colour */
+    border-color: #00ffff;                    /* some accent colour */
     border-width: thick
 }
 
@@ -25,5 +25,18 @@ body {
 }
 
 .navbar a{color: white;}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+
+}
+
+span {
+    font-size: 48px;
+}
 
 
