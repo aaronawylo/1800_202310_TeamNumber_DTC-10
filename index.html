@@ -28,6 +28,7 @@
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
+
   <!-- Link to styles of your own -->
   <link rel="stylesheet" href="./styles/style.css">
   <link rel="stylesheet"
@@ -40,46 +41,8 @@
   <!-- Your HTML Layout go here -->
   <!------------------------------>
 
-  <nav class="navbar navbar-expand-lg bg-primary">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Active Reactive</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#" style="color: black;">Action</a></li>
-              <li><a class="dropdown-item" href="#" style="color: black;">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#" style="color: black;">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-
-          </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav>
-
+  <!-- Navbar goes here -->
+  <nav id="navbarPlaceholder"></nav>
 
   <!-- This is the welcome message -->
   <div class="px-4 py-5 my-5 text-center">
@@ -97,30 +60,17 @@
   </div>
 
   <!-- This is the footer -->
-
+  <nav id="footerPlaceholder"></nav>
   <!---------------------------------------------->
   <!-- Your own JavaScript functions go here    -->
   <!---------------------------------------------->
 
   <!-- Link to scripts of your own -->
-  <!-- <script src="./scripts/script.js"></script> -->
-
+  <script src="./scripts/script.js"></script>
+  <script src="./scripts/skeleton.js"></script>
+  <script src="./scripts/firebaseAPI_Team10.js"></script>
 </body>
 
-<footer>
-  <div class="container">
-    <footer class="py-3 my-4">
-      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Contact Us</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Refrences</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Support</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
 
-      </ul>
-      <p class="text-center text-muted">&copy; BCIT DTC Team-10</p>
-    </footer>
-  </div>
-
-</footer>
 
 </html>
