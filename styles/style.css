@@ -20,6 +20,13 @@
     border-width: thick
 }
 
+.unfilled-btn{ margin-top: 13px;
+    background-color: white; 
+    margin-left: 13px;}
+
+.unfilled-btn>a{text-decoration: none;
+    color: black;}
+    
 body {
     background-color: white;                /* some primary colour */
 }
@@ -43,8 +50,14 @@ span {
     text-transform: capitalize;
 }
 
+.article-title{margin-top: 1%; 
+    font-size: 300%;
+margin-left: 13px;}
+
+
 @media screen and (max-width:873px) {
     img{width: 100%;
         height: auto;}
+
     
 }
