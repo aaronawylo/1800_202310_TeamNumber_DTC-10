@@ -39,4 +39,6 @@ span {
     font-size: 48px;
 }
 
-
+#name-goes-here {
+    text-transform: capitalize;
+}
