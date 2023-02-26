@@ -54,6 +54,13 @@ span {
     font-size: 300%;
 margin-left: 13px;}
 
+.footer-text{padding: 2%;}
+.footer-text h1{padding-bottom: 2%; border-bottom: lightgrey solid 2px;}
+.footer-text a{padding-bottom: 10px}
+
+.accordion-item{margin-bottom: 10px;}
+.accordion-button{color: white; background-color: #00b3b3;}
+
 
 @media screen and (max-width:873px) {
     img{width: 100%;
