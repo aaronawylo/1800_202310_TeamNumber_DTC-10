@@ -9,6 +9,8 @@ function displayCardsDynamically(collection) {
         //iterate thru each doc
         var title = doc.data().name; // get value of the "name" key
         var paragraph = doc.data().paragraph; // get value of the "paragraph" key
+        var link = doc.data().url;
+  
         // var hikeCode = doc.data().code;    //get unique ID to each hike to be used for fetching right image
         // var website = doc.data().website; //gets the website field
         // var docID = doc.id;                //gets the document ID
@@ -19,7 +21,7 @@ function displayCardsDynamically(collection) {
         // newcard.querySelector('.card-website').innerHTML = website
         newcard.querySelector(".card-text").innerHTML = paragraph;
         // newcard.querySelector('.card-image').src = `./images/${hikeCode}.jpg`; //Example: NV01.jpg
-        // newcard.querySelector('a').href = "finance.html?docID=" + docID;
+        newcard.querySelector(".view-article-button").href = link;
 
         //Optional: give unique ids to all elements for future use
         // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
