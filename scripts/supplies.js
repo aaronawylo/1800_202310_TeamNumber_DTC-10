@@ -2,9 +2,9 @@ function displayCardsDynamically(collection) {
     let cardTemplate = document.getElementById("suppliesCardTemplate");
 
     db.collection(collection).get()   //the collection called "hikes"
-        .then(allHikes=> {
+        .then(allSupplies=> {
             //var i = 1;  //Optional: if you want to have a unique ID for each hike
-            allHikes.forEach(doc => { //iterate thru each doc
+            allSupplies.forEach(doc => { //iterate thru each doc
                 var title = doc.data().name;       // get value of the "name" key
                 var details = doc.data().paragraph; 
                 var website = doc.data().website // get value of the "details" key
