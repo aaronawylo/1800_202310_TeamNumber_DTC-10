@@ -27,15 +27,15 @@ function populateUserInfo() {
                     }
                     
                     if (userPhone != null) {
-                        document.getElementById("phoneInput").value = userSchool;
+                        document.getElementById("phoneInput").value = userPhone;
                     }
                     
                     if (userMobile != null) {
-                        document.getElementById("mobileInput").value = userSchool;
+                        document.getElementById("mobileInput").value = userMobile;
                     }
                     
                     if (userAddress != null) {
-                        document.getElementById("addressInput").value = userCity;
+                        document.getElementById("addressInput").value = userAddress;
                     }
                 })
         } else {
