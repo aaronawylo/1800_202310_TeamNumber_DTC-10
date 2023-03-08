@@ -22,7 +22,7 @@
 
 .unfilled-btn{ margin-top: 13px;
     background-color: white; 
-    margin-left: 13px;}
+    }
 
 .unfilled-btn>a{text-decoration: none;
     color: black;}
@@ -52,7 +52,7 @@ span {
 
 .article-title{margin-top: 1%; 
     font-size: 300%;
-margin-left: 13px;}
+}
 
 .footer-text{padding: 2%;}
 .footer-text h1{padding-bottom: 2%; border-bottom: lightgrey solid 2px;}
