@@ -113,14 +113,17 @@
             </div>
             <div class="col-lg-8">
               <div class="card mb-4">
+                <fieldset class="mb-3" id="personalInfoFields" disabled>
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
                       <p class="mb-0">Full Name</p>
                     </div>
+                    
                     <div class="col-sm-9">
-                      <p class="text-muted mb-0">Nick O’Brian</p>
+                      <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
                     </div>
+                  
                   </div>
                   <hr />
                   <div class="row">
@@ -128,7 +131,7 @@
                       <p class="mb-0">Email</p>
                     </div>
                     <div class="col-sm-9">
-                      <p class="text-muted mb-0">nickobrian@gmail.com</p>
+                      <p class="text-muted mb-0" id ="useremail">nickobrian@gmail.com</p>
                     </div>
                   </div>
                   <hr />
@@ -136,9 +139,11 @@
                     <div class="col-sm-3">
                       <p class="mb-0">Phone</p>
                     </div>
+                    
                     <div class="col-sm-9">
-                      <p class="text-muted mb-0">(604) 234-5678</p>
+                      <input type="text" id="phoneInput" class="form-control" placeholder="Enter your home number">
                     </div>
+                  
                   </div>
                   <hr />
                   <div class="row">
@@ -146,7 +151,7 @@
                       <p class="mb-0">Mobile</p>
                     </div>
                     <div class="col-sm-9">
-                      <p class="text-muted mb-0">(604) 765-4321</p>
+                      <input type="text" id="mobileInput" class="form-control" placeholder="Enter your mobile number">
                     </div>
                   </div>
                   <hr />
@@ -154,12 +159,20 @@
                     <div class="col-sm-3">
                       <p class="mb-0">Address</p>
                     </div>
+                    
                     <div class="col-sm-9">
-                      <p class="text-muted mb-0">Downtown, Vancouver, BC</p>
-                    </div>
+                      <input type="text" id="addressInput" class="form-control" placeholder="Enter your address">
                   </div>
+                
                 </div>
+              </fieldset>
+                <div class="d-flex justify-content-end mt-5">
+                  <button type="button" class="btn btn-secondary" onclick="editUserInfo()" style="margin: 10px; padding-left: 20px;padding-right: 20px">Edit</button>
+                  <span style="width: 10px"></span>
+                  <button type="button" class="btn btn-primary" onclick="saveUserInfo()"style="margin: 10px;">Save</button>
               </div>
+              
+            </div>
               <div
                 class="d-flex justify-content-between align-items-center mb-4"
               >
@@ -323,5 +336,6 @@
     <script src="./scripts/script.js"></script>
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/firebaseAPI_Team10.js"></script>
+    <script src="./scripts/profile.js"></script>
   </body>
 </html>
