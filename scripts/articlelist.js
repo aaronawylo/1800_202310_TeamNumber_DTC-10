@@ -17,7 +17,7 @@ function displayCardsDynamically(collection) {
             allArticle.forEach(doc => { //iterate thru each doc
                 var title = doc.data().name;       // get value of the "name" key
                 var paragraph = doc.data().paragraph;  // get value of the "paragraph" key
-                var website = doc.data().website
+                var website = doc.data().url
                 // var hikeCode = doc.data().code;    //get unique ID to each hike to be used for fetching right image
                 // var website = doc.data().website; //gets the website field
                 // var docID = doc.id;                //gets the document ID
