@@ -3,6 +3,7 @@ function get_database_from_URL() {
     const urlParams = new URLSearchParams(window.location.search);
     var category = urlParams.get('category');
     console.log(category);
+    localStorage.setItem("category", category)
     displayCardsDynamically(category);
 }
 
@@ -20,7 +21,7 @@ function displayCardsDynamically(collection) {
                 var website = doc.data().url
                 // var hikeCode = doc.data().code;    //get unique ID to each hike to be used for fetching right image
                 // var website = doc.data().website; //gets the website field
-                // var docID = doc.id;                //gets the document ID
+                var docID = doc.id;                //gets the document ID
                 let newcard = cardTemplate.content.cloneNode(true);
 
                 //update title and text and image
@@ -29,6 +30,11 @@ function displayCardsDynamically(collection) {
                 newcard.querySelector('.card-text').innerHTML = paragraph;
                 // newcard.querySelector('.card-image').src = `./images/${hikeCode}.jpg`; //Example: NV01.jpg
                 newcard.querySelector('.view-article-button').href = website;
+                
+                newcard.querySelector('.review-article-button').href = "review.html?docID=" +docID;
+                
+            
+
 
                 //Optional: give unique ids to all elements for future use
                 // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
