@@ -31,8 +31,5 @@ function getArticleName(id) {
         });
 
 }
-
-
-
 getArticleName(ID);
 
