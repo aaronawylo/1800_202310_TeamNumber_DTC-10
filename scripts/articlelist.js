@@ -43,7 +43,7 @@ function displayCardsDynamically(collection) {
             })
     }
     else {
-        db.collection("supplies").get()   //the collection
+        db.collection("health").get()   //the collection
             .then(allArticle => {
                 allArticle.forEach(doc => { //iterate thru each doc
 
@@ -77,9 +77,8 @@ function displayCardsDynamically(collection) {
 
                 })
             })
-
-
-            db.collection("health").get()   //the collection
+            
+        db.collection("supplies").get()   //the collection
             .then(allArticle => {
                 allArticle.forEach(doc => { //iterate thru each doc
 
