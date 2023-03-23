@@ -42,16 +42,12 @@ body {
 
 }
 
-span {
-    font-size: 48px;
-}
-
 #name-goes-here {
     text-transform: capitalize;
 }
 
 #article-title{margin-top: 1%; 
-    font-size: 300%;
+    font-size: 400%;
 }
 
 .footer-text{padding: 2%;}
