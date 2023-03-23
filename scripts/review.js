@@ -35,7 +35,7 @@ getArticleName(ID);
 
 function writeReview() {
     console.log("inside write review")
-    let Level = document.getElementById("level").value;
+    let Rating = document.getElementById("rating").value;
     let Description = document.getElementById("description").value;
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -48,7 +48,7 @@ function writeReview() {
                     db.collection("reviews").add({
                         ArticleDocID: ID,
                         userID: userID,
-                        level: Level,
+                        rating: Rating,
                         description: Description,
                         timestamp: firebase.firestore.FieldValue.serverTimestamp()
                     }).then(() => {
@@ -73,14 +73,14 @@ function populateReviews() {
             reviews=allReviews.docs;
             console.log(reviews);
             reviews.forEach(doc => {
-                var level = doc.data().level; //gets the unique ID field
+                var rating = doc.data().rating; //gets the unique ID field
                 var description = doc.data().description; 
                 var time = doc.data().timestamp.toDate();
-                console.log(level, description, time)
+                console.log(rating, description, time)
 
                 let reviewCard = ArticleCardTemplate.content.cloneNode(true);
                 reviewCard.querySelector('.time').innerHTML = time    
-                reviewCard.querySelector('.rating').innerHTML = level
+                reviewCard.querySelector('.rating').innerHTML = rating
                 reviewCard.querySelector('.description').innerHTML = description
                 ArticleCardGroup.appendChild(reviewCard);
             })
