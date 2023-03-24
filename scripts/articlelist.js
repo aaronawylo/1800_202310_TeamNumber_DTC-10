@@ -4,6 +4,7 @@ function get_database_from_URL() {
     var category = urlParams.get('category');
     console.log(category);
     displayCardsDynamically(category);
+    console.log($('#summaryPlaceholder').load(`'./text/${category}description.html'`));
 }
 
 get_database_from_URL();
@@ -44,3 +45,8 @@ function displayCardsDynamically(collection) {
 }
 
   //input param is the name of the collection
+
+// load skeleton for page summary
+function loadSummary() {
+}
+loadSummary();
