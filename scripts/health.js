@@ -1,6 +1,6 @@
 function displayCardsDynamically(collection) {
   let cardTemplate = document.getElementById("healthCardTemplate");
-  
+
   db.collection(collection)
     .get() //the collection called "hikes"
     .then((allHealth) => {
@@ -20,6 +20,25 @@ function displayCardsDynamically(collection) {
         newcard.querySelector(".card-text").innerHTML = paragraph;
         // newcard.querySelector('.card-image').src = `./images/${hikeCode}.jpg`; //Example: NV01.jpg
         newcard.querySelector(".view-article-button").href = link;
+
+        newcard
+          .querySelector(".save-article-button")
+          .addEventListener("click", function () {
+            console.log("lulu: ", title);
+            // var userId = firebase.auth().currentUser.uid;
+            // let savedArticles = {
+            //   savedArticles: ["test"],
+            // };
+            // db.collection("users")
+            //   .doc(userId)
+            //   .update(savedArticles)
+            //   .then(() => {
+            //     console.log("Document successfully written!");
+            //   })
+            //   .catch((error) => {
+            //     console.error("Error writing document: ", error);
+            //   });
+          });
         //Optional: give unique ids to all elements for future use
         // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
         // newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
@@ -31,4 +50,91 @@ function displayCardsDynamically(collection) {
       });
     });
 }
+
+// function to save data to user collection in firestore
+// function saveDataToUserCollection(collection, data) {
+//   let formattedData={
+//     savedArticles: data
+//   }
+//   db.collection(collection)
+//     .doc(user.uid)
+//     .set(formattedData)
+//     .then(() => {
+//       console.log("Document successfully written!");
+//     })
+//     .catch((error) => {
+//       console.error("Error writing document: ", error);
+//     });
+// }
+
+document
+  .getElementsByClassName("save-article-button")
+  .click(function saveArticleToProfile(collection, data) {
+    let formattedData = {
+      savedArticles: data,
+    };
+    db.collection(collection)
+      .doc(user.uid)
+      .set(formattedData)
+      .then(() => {
+        console.log("Document successfully written!");
+      })
+      .catch((error) => {
+        console.error("Error writing document: ", error);
+      });
+  });
+//   let savedArticles = document.getElementById("users")
+//   db.collection("users")
+//     // .doc(user.uid)
+//     .set({
+//       formattedData: {
+//         title: "title",
+//         link: "link",
+//         paragraph: "paragraph",
+//         tags: ["health"],
+//         rating: 5,
+//       },
+//     })
+//     .then(() => {
+//       console.log("Document successfully written!");
+//     })
+//     .catch((error) => {
+//       console.error("Error writing document: ", error);
+//     });
+//     document.getElementById("users").appendChild(savedArticles);
+// });
+//   saveDataToUserCollection("users", {name: 'name', articleLink: 'link', paragraph: 'paragraph', tags: ['health'], rating: 5});
+// });
+function saveArticleToProfile(collection, data) {
+  var user = authResult.user;
+  let formattedData = {
+    savedArticles: data,
+  };
+  db.collection(collection)
+    .doc(user.uid)
+    .set(formattedData)
+    .then(() => {
+      console.log("Document successfully written!");
+    })
+    .catch((error) => {
+      console.error("Error writing document: ", error);
+    });
+}
+
 displayCardsDynamically("health"); //input param is the name of the collection
+
+//function for adding collection to an uid
+// function addCollectionToUser(collection, data) {
+//   let formattedData = {
+//     savedArticles: data,
+//   };
+//   db.collection(collection)
+//     .doc(user.uid)
+//     .set(formattedData)
+//     .then(() => {
+//       console.log("Document successfully written!");
+//     })
+//     .catch((error) => {
+//       console.error("Error writing document: ", error);
+//     });
+// }
