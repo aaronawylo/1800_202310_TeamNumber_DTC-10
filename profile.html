@@ -177,9 +177,12 @@
                 class="d-flex justify-content-between align-items-center mb-4"
               >
                 <p class="lead fw-normal mb-0">Saved Articles</p>
+              
               </div>
 
-              <div id="cardTemplate">
+              <div id = "articleCardGroup"></div>
+
+              <template id="cardTemplate">
                 <div class="col">
                   <div class="card shadow-sm">
                     <div class="card-body">
@@ -199,12 +202,14 @@
                         class="d-flex justify-content-between align-items-center"
                       >
                         <div class="btn-group">
+                          <a href="" class="view-article-button">
                           <button
                             type="button"
                             class="btn btn-sm btn-outline-secondary"
                           >
                             View
                           </button>
+                        </a>
                           <button
                             type="button"
                             class="btn btn-sm btn-outline-secondary"
@@ -212,119 +217,11 @@
                             Remove
                           </button>
                         </div>
-                        <div class="wrapper">
-                          <input type="radio" id="r1" name="rg1" />
-                          <label for="r1">&#9733;</label>
-                          <input type="radio" id="r2" name="rg1" />
-                          <label for="r2">&#9733;</label>
-                          <input type="radio" id="r3" name="rg1" />
-                          <label for="r3">&#9733;</label>
-                          <input type="radio" id="r4" name="rg1" />
-                          <label for="r4">&#9733;</label>
-                          <input type="radio" id="r5" name="rg1" />
-                          <label for="r5">&#9733;</label>
-                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="col">
-                  <div class="card shadow-sm">
-                    <div class="card-body">
-                      <h3 class="card-title"></h3>
-                      <p class="card-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Rerum voluptatem aspernatur, inventore dolores dolorem
-                        sint laudantium eligendi possimus sequi voluptas enim
-                        excepturi, et, minima delectus accusamus. Voluptatem ullam
-                        natus quidem numquam ab, consequuntur hic delectus itaque,
-                        facere tempora reiciendis amet unde debitis voluptate
-                        omnis. Dolore eos nihil sint, dolores minima ea officiis
-                        velit voluptas beatae assumenda doloremque a, ratione
-                        voluptates?
-                      </p>
-                      <div
-                        class="d-flex justify-content-between align-items-center"
-                      >
-                        <div class="btn-group">
-                          <button
-                            type="button"
-                            class="btn btn-sm btn-outline-secondary"
-                          >
-                            View
-                          </button>
-                          <button
-                            type="button"
-                            class="btn btn-sm btn-outline-secondary"
-                          >
-                            Remove
-                          </button>
-                        </div>
-                        <div class="wrapper">
-                          <input type="radio" id="r1" name="rg1" />
-                          <label for="r1">&#9733;</label>
-                          <input type="radio" id="r2" name="rg1" />
-                          <label for="r2">&#9733;</label>
-                          <input type="radio" id="r3" name="rg1" />
-                          <label for="r3">&#9733;</label>
-                          <input type="radio" id="r4" name="rg1" />
-                          <label for="r4">&#9733;</label>
-                          <input type="radio" id="r5" name="rg1" />
-                          <label for="r5">&#9733;</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card shadow-sm">
-                    <div class="card-body">
-                      <h3 class="card-title"></h3>
-                      <p class="card-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Rerum voluptatem aspernatur, inventore dolores dolorem
-                        sint laudantium eligendi possimus sequi voluptas enim
-                        excepturi, et, minima delectus accusamus. Voluptatem ullam
-                        natus quidem numquam ab, consequuntur hic delectus itaque,
-                        facere tempora reiciendis amet unde debitis voluptate
-                        omnis. Dolore eos nihil sint, dolores minima ea officiis
-                        velit voluptas beatae assumenda doloremque a, ratione
-                        voluptates?
-                      </p>
-                      <div
-                        class="d-flex justify-content-between align-items-center"
-                      >
-                        <div class="btn-group">
-                          <button
-                            type="button"
-                            class="btn btn-sm btn-outline-secondary"
-                          >
-                            View
-                          </button>
-                          <button
-                            type="button"
-                            class="btn btn-sm btn-outline-secondary"
-                          >
-                            Remove
-                          </button>
-                        </div>
-                        <div class="wrapper">
-                          <input type="radio" id="r1" name="rg1" />
-                          <label for="r1">&#9733;</label>
-                          <input type="radio" id="r2" name="rg1" />
-                          <label for="r2">&#9733;</label>
-                          <input type="radio" id="r3" name="rg1" />
-                          <label for="r3">&#9733;</label>
-                          <input type="radio" id="r4" name="rg1" />
-                          <label for="r4">&#9733;</label>
-                          <input type="radio" id="r5" name="rg1" />
-                          <label for="r5">&#9733;</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              </template>
             </div>
           </div>
         </div>
