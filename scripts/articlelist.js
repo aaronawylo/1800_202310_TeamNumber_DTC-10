@@ -6,12 +6,13 @@ firebase.auth().onAuthStateChanged((user) => {
   }
 });
 function get_database_from_URL() {
-  console.log("Calling function");
+  console.log("Calling function")
   const urlParams = new URLSearchParams(window.location.search);
-  var category = urlParams.get("category");
+  var category = urlParams.get('category');
   console.log(category);
   localStorage.setItem("category", category);
   displayCardsDynamically(category);
+  console.log($('#summaryPlaceholder').load(`'./text/financedescription.html'`));
 }
 
 get_database_from_URL();
