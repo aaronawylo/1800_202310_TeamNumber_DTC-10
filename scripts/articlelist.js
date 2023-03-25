@@ -104,13 +104,17 @@ function displayCardsDynamically(collection) {
             // });
 
             // new stuff start
-            newcard.querySelector(".save-article-button").onclick = () =>
-              console.log("hi");
+            // newcard.querySelector(".save-article-button").onclick = () =>
+            //   console.log("hi");
 
             // new stuff end
 
             newcard.querySelector(".review-article-button").href =
               "review.html?docID=" + docID;
+
+            newcard.querySelector("i").id = "save-" + docID;
+            newcard.querySelector("i").onclick = () =>
+              saveArticleToProfile(docID);
 
             // newcard
             //   .querySelector(".save-article-button")
@@ -167,6 +171,10 @@ function displayCardsDynamically(collection) {
             newcard.querySelector(".review-article-button").href =
               "review.html?docID=" + docID;
 
+            newcard.querySelector("i").id = "save-" + docID;
+            newcard.querySelector("i").onclick = () =>
+              saveArticleToProfile(docID);
+
             //Optional: give unique ids to all elements for future use
             // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
             // newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
@@ -202,6 +210,10 @@ function displayCardsDynamically(collection) {
 
             newcard.querySelector(".review-article-button").href =
               "review.html?docID=" + docID;
+
+            newcard.querySelector("i").id = "save-" + docID;
+            newcard.querySelector("i").onclick = () =>
+              saveArticleToProfile(docID);
 
             //Optional: give unique ids to all elements for future use
             // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
@@ -243,7 +255,7 @@ function saveArticleToProfile(title) {
 
   db.collection("users")
     .doc(userId)
-    .update({savedArticles: firebase.firestore.FieldValue.arrayUnion(title)}, {merge: true})
+    .update({ savedArticles: firebase.firestore.FieldValue.arrayUnion(title) }, { merge: true })
     .then(() => {
       console.log("Document successfully written!");
     })
