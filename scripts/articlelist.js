@@ -239,13 +239,10 @@ function saveArticleToProfile(title) {
   console.log("lulu: ", title);
   var userId = firebase.auth().currentUser.uid;
 
-  let savedArticles = {
-    savedArticles: [title],
-  };
 
   db.collection("users")
     .doc(userId)
-    .update(savedArticles)
+    .update({savedArticles: firebase.firestore.FieldValue.arrayUnion(title)}, {merge: true})
     .then(() => {
       console.log("Document successfully written!");
     })
