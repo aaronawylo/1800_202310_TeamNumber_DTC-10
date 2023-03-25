@@ -252,16 +252,33 @@ function saveArticleToProfile(title) {
   console.log("lulu: ", title);
   var userId = firebase.auth().currentUser.uid;
 
+  db.collection("users").doc(userId).get().then((doc) => {
 
-  db.collection("users")
-    .doc(userId)
-    .update({ savedArticles: firebase.firestore.FieldValue.arrayUnion(title) }, { merge: true })
-    .then(() => {
-      console.log("Document successfully written!");
-    })
-    .catch((error) => {
-      console.error("Error writing document: ", error);
-    });
+    if (doc.data().savedArticles.includes(title)) {
+      db.collection("users")
+        .doc(userId)
+        .update({ savedArticles: firebase.firestore.FieldValue.arrayRemove(title) }, { merge: true })
+        .then(() => {
+          console.log("Document successfully written!");
+        })
+        .catch((error) => {
+          console.error("Error writing document: ", error);
+        });
+    }
+
+    else {
+      db.collection("users")
+        .doc(userId)
+        .update({ savedArticles: firebase.firestore.FieldValue.arrayUnion(title) }, { merge: true })
+        .then(() => {
+          console.log("Document successfully written!");
+        })
+        .catch((error) => {
+          console.error("Error writing document: ", error);
+        })
+    }
+  }
+  )
 }
 
 //input param is the name of the collection
