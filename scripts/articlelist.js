@@ -12,7 +12,7 @@ function get_database_from_URL() {
   console.log(category);
   localStorage.setItem("category", category);
   displayCardsDynamically(category);
-  console.log($('#summaryPlaceholder').load(`'./text/financedescription.html'`));
+  console.log($('#summaryPlaceholder').load(`./text/${category}description.html`));
 }
 
 get_database_from_URL();
