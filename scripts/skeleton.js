@@ -19,6 +19,25 @@ function activateDropdown() {
 
 activateDropdown();
 
+// Define a function to add word from search bar to url
+function activateSearch() {
+    $(document).on('click', '#searchbutton', function () {
+        console.log("Search button clicked");
+        var searchword = $('#searchValue').val();
+        console.log(searchword);
+        window.location.href = "./articlelist.html?category=" + searchword;
+    });
+}
+
+activateSearch();
+
+    // $('.dropdown-toggle').dropdown();
+//     $('.dropdown-item').click(function () {
+//         console.log($(this).text());
+//         window.location.href = "./articlelist.html?category=" + $(this).text().toLowerCase();
+//     });
+// }
+
 // function to add event listener to menu items
 // function addMenuListener(category) {
 //     console.log(category);
