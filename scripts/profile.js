@@ -180,26 +180,27 @@ function getBookmarks(user) {
                     articleCardGroup.appendChild(newcard);
                 })
             });
-        })}
+        })
+}
 
 
 function removeArticle(title) {
     console.log("lulu: ", title);
     var userId = firebase.auth().currentUser.uid;
 
-    db.collection("users").doc(userId).get().then((doc) => {
-            db.collection("users")
-                .doc(userId)
-                .update({ savedArticles: firebase.firestore.FieldValue.arrayRemove(title) }, { merge: true })
-                .then(() => {
-                    console.log("Document successfully written!");
-                    window.location.href = "profile.html"; //new line added
-                })
-                .catch((error) => {
-                    console.error("Error writing document: ", error);
-                })
-        
 
-})
+    db.collection("users")
+        .doc(userId)
+        .update({ savedArticles: firebase.firestore.FieldValue.arrayRemove(title) }, { merge: true })
+        .then(() => {
+            console.log("Document successfully written!");
+            window.location.href = "profile.html"; //new line added
+        })
+        .catch((error) => {
+            console.error("Error writing document: ", error);
+        })
+
+
+
 }
 
