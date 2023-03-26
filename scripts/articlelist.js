@@ -49,25 +49,7 @@ function displayCardsDynamically(collection) {
           newcard.querySelector("i").onclick = () =>
             saveArticleToProfile(docID);
 
-          // newcard.querySelector(".save-article-button").onclick = () =>
-          //   saveArticleToProfile(title);
-
-          //Optional: give unique ids to all elements for future use
-          // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
-          // newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
-          // newcard.querySelector('.card-image').setAttribute("id", "cimage" + i);
-
-          //attach to gallery, Example: "hikes-go-here"
-          // newcard.querySelector("button").id = "save-" + docID;
-          // this line will call a function to save the hikes to the user's document
-          // newcard.querySelector("button").onclick = () => updateBookmark(docID);
-          // currentUser.get().then((userDoc) => {
-          //   //get the user name
-          //   var bookmarks = userDoc.data().bookmarks;
-          //   if (bookmarks.includes(docID)) {
-          //     document.getElementById("save-" + docID).innerText = "Profile";
-          //   }
-          // });
+        
 
           document.getElementById("article-go-here").appendChild(newcard);
 
