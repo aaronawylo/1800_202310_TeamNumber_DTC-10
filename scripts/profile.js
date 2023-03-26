@@ -127,22 +127,6 @@ function getBookmarks(user) {
                     //Finally, attach this new card to the gallery
                     articleCardGroup.appendChild(newcard);
                 })
-            });
-        })
-
-    db.collection("users").doc(user.uid).get()
-        .then(userDoc => {
-
-            // Get the Array of bookmarks
-            var bookmarks = userDoc.data().savedArticles;
-            console.log(bookmarks);
-
-            // Get pointer the new card template
-            let newcardTemplate = document.getElementById("cardTemplate");
-
-            // Iterate through the ARRAY of bookmarked hikes (document ID's)
-            bookmarks.forEach(allArticle => {
-                console.log(allArticle);
                 db.collection("supplies").doc(allArticle).get().then(doc => {
                     var title = doc.data().name; // get value of the "name" key
                     var paragraph = doc.data().paragraph; //get unique ID to each hike to be used for fetching right image
@@ -169,22 +153,6 @@ function getBookmarks(user) {
                     //Finally, attach this new card to the gallery
                     articleCardGroup.appendChild(newcard);
                 })
-            });
-        })
-
-    db.collection("users").doc(user.uid).get()
-        .then(userDoc => {
-
-            // Get the Array of bookmarks
-            var bookmarks = userDoc.data().savedArticles;
-            console.log(bookmarks);
-
-            // Get pointer the new card template
-            let newcardTemplate = document.getElementById("cardTemplate");
-
-            // Iterate through the ARRAY of bookmarked hikes (document ID's)
-            bookmarks.forEach(allArticle => {
-                console.log(allArticle);
                 db.collection("finance").doc(allArticle).get().then(doc => {
                     var title = doc.data().name; // get value of the "name" key
                     var paragraph = doc.data().paragraph; //get unique ID to each hike to be used for fetching right image
@@ -201,6 +169,7 @@ function getBookmarks(user) {
                     newcard.querySelector(".view-article-button").href = url;
                     newcard.querySelector(".remove-button").onclick = () =>
                         removeArticle(doc.id);
+
                     //NEW LINE: update to display length, duration, last updated
                     // newcard.querySelector('.card-length').innerHTML =
                     //     "Length: " + doc.data().length + " km <br>" +
@@ -209,12 +178,9 @@ function getBookmarks(user) {
 
                     //Finally, attach this new card to the gallery
                     articleCardGroup.appendChild(newcard);
-                        
                 })
             });
-        })
-
-}
+        })}
 
 
 function removeArticle(title) {
