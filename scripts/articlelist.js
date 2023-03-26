@@ -1,7 +1,7 @@
 var currentUser;
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    currentUser = db.collection("users").doc(user.uid); //global
+    var currentUser = db.collection("users").doc(user.uid); //global
     console.log(currentUser);
   }
 });
@@ -49,9 +49,18 @@ function displayCardsDynamically(collection) {
           newcard.querySelector("i").onclick = () =>
             saveArticleToProfile(docID);
 
-        
+
 
           document.getElementById("article-go-here").appendChild(newcard);
+
+          var userId = firebase.auth().currentUser.uid;
+          db.collection("users").doc(userId).get().then((doc) => {
+
+            if (doc.data().savedArticles.includes(docID)) {
+              document.getElementById('save-' + docID).innerHTML = 'bookmark';
+            }
+
+          })
 
           //i++;   //Optional: iterate variable to serve as unique ID
         });
@@ -77,53 +86,23 @@ function displayCardsDynamically(collection) {
             // newcard.querySelector('.card-image').src = `./images/${hikeCode}.jpg`; //Example: NV01.jpg
             newcard.querySelector(".view-article-button").href = website;
 
-            // newcard.querySelector(".save-article-button").href =
-            //   saveArticleToProfile(title);
-
-            // var saveBtn = document.querySelector(".save-article-button");
-            // saveBtn.addEventListener("click", function () {
-            //   console.log("button works now");
-            // });
-
-            // new stuff start
-            // newcard.querySelector(".save-article-button").onclick = () =>
-            //   console.log("hi");
-
-            // new stuff end
-
             newcard.querySelector(".review-article-button").href =
               "review.html?docID=" + docID;
 
             newcard.querySelector("i").id = "save-" + docID;
             newcard.querySelector("i").onclick = () =>
               saveArticleToProfile(docID);
-
-            // newcard
-            //   .querySelector(".save-article-button")
-            //   .addEventListener("click", function () {
-            //     console.log("lulu: ");
-            //     var userId = firebase.auth().currentUser.uid;
-            //     let savedArticles = {
-            //       savedArticles: ["test"],
-            //     };
-            //     db.collection("users")
-            //       .doc(userId)
-            //       .update(savedArticles)
-            //       .then(() => {
-            //         console.log("Document successfully written!");
-            //       })
-            //       .catch((error) => {
-            //         console.error("Error writing document: ", error);
-            //       });
-            //   });
-
-            //Optional: give unique ids to all elements for future use
-            // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
-            // newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
-            // newcard.querySelector('.card-image').setAttribute("id", "cimage" + i);
-
-            //attach to gallery, Example: "hikes-go-here"
             document.getElementById("article-go-here").appendChild(newcard);
+
+
+            var userId = firebase.auth().currentUser.uid;
+            db.collection("users").doc(userId).get().then((doc) => {
+
+              if (doc.data().savedArticles.includes(docID)) {
+                document.getElementById('save-' + docID).innerHTML = 'bookmark';
+              }
+
+            })
 
             //i++;   //Optional: iterate variable to serve as unique ID
           }
@@ -157,13 +136,15 @@ function displayCardsDynamically(collection) {
             newcard.querySelector("i").onclick = () =>
               saveArticleToProfile(docID);
 
-            //Optional: give unique ids to all elements for future use
-            // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
-            // newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
-            // newcard.querySelector('.card-image').setAttribute("id", "cimage" + i);
-
-            //attach to gallery, Example: "hikes-go-here"
             document.getElementById("article-go-here").appendChild(newcard);
+            var userId = firebase.auth().currentUser.uid;
+            db.collection("users").doc(userId).get().then((doc) => {
+
+              if (doc.data().savedArticles.includes(docID)) {
+                document.getElementById('save-' + docID).innerHTML = 'bookmark';
+              }
+
+            })
 
             //i++;   //Optional: iterate variable to serve as unique ID
           }
@@ -205,26 +186,15 @@ function displayCardsDynamically(collection) {
             //attach to gallery, Example: "hikes-go-here"
             document.getElementById("article-go-here").appendChild(newcard);
 
-            // newcard
-            //   .querySelector(".save-article-button")
-            //   .addEventListener("click", function () {
-            //     console.log("lulu: ", title);
-            //     // var userId = firebase.auth().currentUser.uid;
-            //     // let savedArticles = {
-            //     //   savedArticles: ["test"],
-            //     // };
-            //     // db.collection("users")
-            //     //   .doc(userId)
-            //     //   .update(savedArticles)
-            //     //   .then(() => {
-            //     //     console.log("Document successfully written!");
-            //     //   })
-            //     //   .catch((error) => {
-            //     //     console.error("Error writing document: ", error);
-            //     //   });
-            //   });
+            var userId = firebase.auth().currentUser.uid;
+            db.collection("users").doc(userId).get().then((doc) => {
 
-            //i++;   //Optional: iterate variable to serve as unique ID
+              if (doc.data().savedArticles.includes(docID)) {
+                document.getElementById('save-' + docID).innerHTML = 'bookmark';
+              }
+
+            })
+
           }
         });
       });
@@ -246,6 +216,7 @@ function saveArticleToProfile(title) {
         .catch((error) => {
           console.error("Error writing document: ", error);
         });
+      document.getElementById("save-" + title).innerHTML = "bookmark_border"
     }
 
     else {
@@ -258,65 +229,9 @@ function saveArticleToProfile(title) {
         .catch((error) => {
           console.error("Error writing document: ", error);
         })
+      document.getElementById("save-" + title).innerHTML = "bookmark"
     }
   }
   )
 }
 
-//input param is the name of the collection
-
-// newcard.querySelector("button").id = "save-" + docID;
-// this line will call a function to save the hikes to the user's document
-// newcard.querySelector("button").onclick = () => updateBookmark(docID);
-// currentUser.get().then((userDoc) => {
-//   //get the user name
-//   var bookmarks = userDoc.data().bookmarks;
-//   if (bookmarks.includes(docID)) {
-//     document.getElementById("save-" + docID).innerText = "Profile";
-//   }
-// });
-function updateBookmark(id) {
-  firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-      currentUser = db.collection("users").doc(user.uid); //global
-      console.log(currentUser);
-    }
-  });
-  currentUser.get().then((userDoc) => {
-    bookmarksNow = userDoc.data().bookmarks;
-    console.log(bookmarksNow);
-
-    //check if this bookmark already existed in firestore:
-    if (bookmarksNow.includes(id)) {
-      console.log(id);
-      //if it does exist, then remove it
-      currentUser
-        .update({
-          bookmarks: firebase.firestore.FieldValue.arrayRemove(id),
-        })
-        .then(function () {
-          console.log("This article is removed for" + currentUser);
-          var iconID = "save-" + id;
-          console.log(iconID);
-          document.getElementById(iconID).innerText = "Save";
-        });
-    } else {
-      //if it does not exist, then add it
-      currentUser
-        .set(
-          {
-            bookmarks: firebase.firestore.FieldValue.arrayUnion(id),
-          },
-          {
-            merge: true,
-          }
-        )
-        .then(function () {
-          console.log("This aticle is for" + currentUser);
-          var iconID = "save-" + id;
-          console.log(iconID);
-          document.getElementById(iconID).innerText = "Save";
-        });
-    }
-  });
-}
