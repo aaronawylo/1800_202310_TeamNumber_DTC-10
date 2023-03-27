@@ -22,7 +22,8 @@ var uiConfig = {
                        email: user.email,                         //with authenticated user's ID (user.uid)
                        phone:"",
                        mobile: "",
-                       address: ""
+                       address: [],
+                       savedArticles:"{}"
                                             //optional default profile info      
                                                //optional default profile info
                 }).then(function () {
