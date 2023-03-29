@@ -20,7 +20,7 @@ function activateDropdown() {
 activateDropdown();
 
 // Define a function to add word from search bar to url
-function activateSearch() {
+function buttonforSearch() {
     $(document).on('click', '#searchbutton', function () {
         console.log("Search button clicked");
         var searchword = $('#searchValue').val();
@@ -29,26 +29,16 @@ function activateSearch() {
     });
 }
 
-activateSearch();
+buttonforSearch();
 
-    // $('.dropdown-toggle').dropdown();
-//     $('.dropdown-item').click(function () {
-//         console.log($(this).text());
-//         window.location.href = "./articlelist.html?category=" + $(this).text().toLowerCase();
-//     });
-// }
+function onSubmit() {
+    $(document).on('submit', '#searchForm', function () {
+            console.log("Search submitted");
+            var searchword = $('#searchValue').val();
+            console.log(searchword);
+            window.location.href = "./articlelist.html?category=" + searchword;
+        }
+    );
+}
 
-// function to add event listener to menu items
-// function addMenuListener(category) {
-//     console.log(category);
-//     document.getElementById("health").addEventListener("click", () => {
-//         passValueURL(category);
-//     })
-// }
-
-// function passValueURL(category) {
-//     console.log("clicked ..." + category);
-//     window.location.href = "./articlelist.html&category=" + category;
-// }
-
-// addMenuListener("health");
+onSubmit();
