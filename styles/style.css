@@ -14,10 +14,10 @@
 
 .btn-primary {
     color: white;                           /* contrast to secondary colour */
-    font-size: 150%;
-    background-color: #00b3b3;                /* some secondary colour */
-    border-color: #00ffff;                    /* some accent colour */
-    border-width: thick
+    font-size: 100%;
+    background-color: #0d6efd;                /* some secondary colour */
+    border-color: #ffffff;                    /* some accent colour */
+    border-width: thin
 }
 
 .unfilled-btn{ margin-top: 13px;
@@ -64,3 +64,5 @@ body {
 
     
 }
+
+
