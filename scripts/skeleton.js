@@ -35,10 +35,18 @@ function onSubmit() {
     $(document).on('submit', '#searchForm', function () {
             console.log("Search submitted");
             var searchword = $('#searchValue').val();
-            console.log(searchword);
-            window.location.href = "./articlelist.html?category=" + searchword;
+            const listofwords = ["finance", "health", "supplies", "heat", "fire", "cold", "earthquake", "flood", "thunderstorm", "wind"]
+            // if searchword is not in listofwords, return false
+            if (listofwords.includes(searchword.toLowerCase())) {
+                console.log(searchword.toLowerCase());
+                window.location.href = "./articlelist.html?category=" + searchword.toLowerCase();
+            }
+            else {
+                return false;
+            }
         }
     );
 }
+
 
 onSubmit();
