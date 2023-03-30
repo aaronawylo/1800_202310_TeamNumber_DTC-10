@@ -24,8 +24,14 @@ function buttonforSearch() {
     $(document).on('click', '#searchbutton', function () {
         console.log("Search button clicked");
         var searchword = $('#searchValue').val();
-        console.log(searchword);
-        window.location.href = "./articlelist.html?category=" + searchword;
+        const listofwords = ["finance", "health", "supplies", "heat", "fire", "cold", "earthquake", "flood", "thunderstorm", "wind"]
+        if (listofwords.includes(searchword.toLowerCase())) {
+            console.log(searchword.toLowerCase());
+            window.location.href = "./articlelist.html?category=" + searchword.toLowerCase();
+        }
+        else {
+            return false;
+        }
     });
 }
 
