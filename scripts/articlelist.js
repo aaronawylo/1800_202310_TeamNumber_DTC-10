@@ -163,7 +163,7 @@ function displayCardsDynamically(collection) {
           var website = doc.data().url;
           var docID = doc.id; //gets the document ID
           let newcard = cardTemplate.content.cloneNode(true);
-          console.log(doc.data().tag);
+          console.log(doc.data().tags);
           //update title and text and image
           newcard.querySelector(".card-title").innerHTML = title;
           // newcard.querySelector('.card-website').innerHTML = website
