@@ -66,136 +66,136 @@ function displayCardsDynamically(collection) {
         });
       });
   } else {
-    db.collection("health")
+    db.collection("health").where("tags", "array-contains", collection)
       .get() //the collection
       .then((allArticle) => {
         allArticle.forEach((doc) => {
           //iterate thru each doc
 
-          if (doc.data().tags.includes(collection)) {
-            var title = doc.data().name; // get value of the "name" key
-            var paragraph = doc.data().paragraph; // get value of the "paragraph" key
-            var website = doc.data().url;
-            var docID = doc.id; //gets the document ID
-            let newcard = cardTemplate.content.cloneNode(true);
-            console.log(doc.data().tags);
-            //update title and text and image
-            newcard.querySelector(".card-title").innerHTML = title;
-            // newcard.querySelector('.card-website').innerHTML = website
-            newcard.querySelector(".card-text").innerHTML = paragraph;
-            // newcard.querySelector('.card-image').src = `./images/${hikeCode}.jpg`; //Example: NV01.jpg
-            newcard.querySelector(".view-article-button").href = website;
+          var title = doc.data().name; // get value of the "name" key
+          var paragraph = doc.data().paragraph; // get value of the "paragraph" key
+          var website = doc.data().url;
+          var docID = doc.id; //gets the document ID
+          let newcard = cardTemplate.content.cloneNode(true);
+          console.log(doc.data().tags);
+          //update title and text and image
+          newcard.querySelector(".card-title").innerHTML = title;
+          // newcard.querySelector('.card-website').innerHTML = website
+          newcard.querySelector(".card-text").innerHTML = paragraph;
+          // newcard.querySelector('.card-image').src = `./images/${hikeCode}.jpg`; //Example: NV01.jpg
+          newcard.querySelector(".view-article-button").href = website;
 
-            newcard.querySelector(".review-article-button").href =
-              "review.html?docID=" + docID;
+          newcard.querySelector(".review-article-button").href =
+            "review.html?docID=" + docID;
 
-            newcard.querySelector("i").id = "save-" + docID;
-            newcard.querySelector("i").onclick = () =>
-              saveArticleToProfile(docID);
-            document.getElementById("article-go-here").appendChild(newcard);
+          newcard.querySelector("i").id = "save-" + docID;
+          newcard.querySelector("i").onclick = () =>
+            saveArticleToProfile(docID);
+          document.getElementById("article-go-here").appendChild(newcard);
 
 
-            var userId = firebase.auth().currentUser.uid;
-            db.collection("users").doc(userId).get().then((doc) => {
+          var userId = firebase.auth().currentUser.uid;
+          db.collection("users").doc(userId).get().then((doc) => {
 
-              if (doc.data().savedArticles.includes(docID)) {
-                document.getElementById('save-' + docID).innerHTML = 'bookmark';
-              }
+            if (doc.data().savedArticles.includes(docID)) {
+              document.getElementById('save-' + docID).innerHTML = 'bookmark';
 
-            })
+
+            }
 
             //i++;   //Optional: iterate variable to serve as unique ID
-          }
+          })
         });
       });
 
-    db.collection("supplies")
+
+    db.collection("supplies").where("tags", "array-contains", collection)
       .get() //the collection
       .then((allArticle) => {
         allArticle.forEach((doc) => {
           //iterate thru each doc
 
-          if (doc.data().tags.includes(collection)) {
-            var title = doc.data().name; // get value of the "name" key
-            var paragraph = doc.data().paragraph; // get value of the "paragraph" key
-            var website = doc.data().url;
-            var docID = doc.id; //gets the document ID
-            let newcard = cardTemplate.content.cloneNode(true);
-            console.log(doc.data().tags);
-            //update title and text and image
-            newcard.querySelector(".card-title").innerHTML = title;
-            // newcard.querySelector('.card-website').innerHTML = website
-            newcard.querySelector(".card-text").innerHTML = paragraph;
-            // newcard.querySelector('.card-image').src = `./images/${hikeCode}.jpg`; //Example: NV01.jpg
-            newcard.querySelector(".view-article-button").href = website;
 
-            newcard.querySelector(".review-article-button").href =
-              "review.html?docID=" + docID;
+          var title = doc.data().name; // get value of the "name" key
+          var paragraph = doc.data().paragraph; // get value of the "paragraph" key
+          var website = doc.data().url;
+          var docID = doc.id; //gets the document ID
+          let newcard = cardTemplate.content.cloneNode(true);
+          console.log(doc.data().tags);
+          //update title and text and image
+          newcard.querySelector(".card-title").innerHTML = title;
+          // newcard.querySelector('.card-website').innerHTML = website
+          newcard.querySelector(".card-text").innerHTML = paragraph;
+          // newcard.querySelector('.card-image').src = `./images/${hikeCode}.jpg`; //Example: NV01.jpg
+          newcard.querySelector(".view-article-button").href = website;
 
-            newcard.querySelector("i").id = "save-" + docID;
-            newcard.querySelector("i").onclick = () =>
-              saveArticleToProfile(docID);
+          newcard.querySelector(".review-article-button").href =
+            "review.html?docID=" + docID;
 
-            document.getElementById("article-go-here").appendChild(newcard);
-            var userId = firebase.auth().currentUser.uid;
-            db.collection("users").doc(userId).get().then((doc) => {
+          newcard.querySelector("i").id = "save-" + docID;
+          newcard.querySelector("i").onclick = () =>
+            saveArticleToProfile(docID);
 
-              if (doc.data().savedArticles.includes(docID)) {
-                document.getElementById('save-' + docID).innerHTML = 'bookmark';
-              }
+          document.getElementById("article-go-here").appendChild(newcard);
+          var userId = firebase.auth().currentUser.uid;
+          db.collection("users").doc(userId).get().then((doc) => {
 
-            })
+            if (doc.data().savedArticles.includes(docID)) {
+              document.getElementById('save-' + docID).innerHTML = 'bookmark';
+            }
 
-            //i++;   //Optional: iterate variable to serve as unique ID
-          }
+          })
+
+          //i++;   //Optional: iterate variable to serve as unique ID
+
         });
       });
 
-    db.collection("finance")
+    db.collection("finance").where("tag", "array-contains", collection)
       .get() //the collection
       .then((allArticle) => {
         allArticle.forEach((doc) => {
           //iterate thru each doc
 
-          if (doc.data().tag.includes(collection)) {
-            var title = doc.data().name; // get value of the "name" key
-            var paragraph = doc.data().paragraph; // get value of the "paragraph" key
-            var website = doc.data().url;
-            var docID = doc.id; //gets the document ID
-            let newcard = cardTemplate.content.cloneNode(true);
-            console.log(doc.data().tag);
-            //update title and text and image
-            newcard.querySelector(".card-title").innerHTML = title;
-            // newcard.querySelector('.card-website').innerHTML = website
-            newcard.querySelector(".card-text").innerHTML = paragraph;
-            // newcard.querySelector('.card-image').src = `./images/${hikeCode}.jpg`; //Example: NV01.jpg
-            newcard.querySelector(".view-article-button").href = website;
 
-            newcard.querySelector(".review-article-button").href =
-              "review.html?docID=" + docID;
+          var title = doc.data().name; // get value of the "name" key
+          var paragraph = doc.data().paragraph; // get value of the "paragraph" key
+          var website = doc.data().url;
+          var docID = doc.id; //gets the document ID
+          let newcard = cardTemplate.content.cloneNode(true);
+          console.log(doc.data().tag);
+          //update title and text and image
+          newcard.querySelector(".card-title").innerHTML = title;
+          // newcard.querySelector('.card-website').innerHTML = website
+          newcard.querySelector(".card-text").innerHTML = paragraph;
+          // newcard.querySelector('.card-image').src = `./images/${hikeCode}.jpg`; //Example: NV01.jpg
+          newcard.querySelector(".view-article-button").href = website;
 
-            newcard.querySelector("i").id = "save-" + docID;
-            newcard.querySelector("i").onclick = () =>
-              saveArticleToProfile(docID);
+          newcard.querySelector(".review-article-button").href =
+            "review.html?docID=" + docID;
 
-            //Optional: give unique ids to all elements for future use
-            // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
-            // newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
-            // newcard.querySelector('.card-image').setAttribute("id", "cimage" + i);
+          newcard.querySelector("i").id = "save-" + docID;
+          newcard.querySelector("i").onclick = () =>
+            saveArticleToProfile(docID);
 
-            //attach to gallery, Example: "hikes-go-here"
-            document.getElementById("article-go-here").appendChild(newcard);
+          //Optional: give unique ids to all elements for future use
+          // newcard.querySelector('.card-title').setAttribute("id", "ctitle" + i);
+          // newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
+          // newcard.querySelector('.card-image').setAttribute("id", "cimage" + i);
 
-            var userId = firebase.auth().currentUser.uid;
-            db.collection("users").doc(userId).get().then((doc) => {
+          //attach to gallery, Example: "hikes-go-here"
+          document.getElementById("article-go-here").appendChild(newcard);
 
-              if (doc.data().savedArticles.includes(docID)) {
-                document.getElementById('save-' + docID).innerHTML = 'bookmark';
-              }
+          var userId = firebase.auth().currentUser.uid;
+          db.collection("users").doc(userId).get().then((doc) => {
 
-            })
+            if (doc.data().savedArticles.includes(docID)) {
+              document.getElementById('save-' + docID).innerHTML = 'bookmark';
+            }
 
-          }
+          })
+
+
         });
       });
   }
