@@ -27,7 +27,7 @@ function buttonforSearch() {
         const listofwords = ["finance", "health", "supplies", "heat", "fire", "cold", "earthquake", "flood", "thunderstorm", "wind"]
         if (listofwords.includes(searchword.toLowerCase())) {
             console.log(searchword.toLowerCase());
-            window.location.href = "./articlelist.html?category=" + searchword.toLowerCase();
+            window.location.href = "./search.html?results=" + searchword.toLowerCase();
         }
         else {
             return false;
@@ -45,7 +45,7 @@ function onSubmit() {
             // if searchword is not in listofwords, return false
             if (listofwords.includes(searchword.toLowerCase())) {
                 console.log(searchword.toLowerCase());
-                window.location.href = "./articlelist.html?category=" + searchword.toLowerCase();
+                window.location.href = "./search.html?results=" + searchword.toLowerCase();
             }
             else {
                 return false;
