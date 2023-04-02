@@ -61,6 +61,8 @@ populateUserInfo();
 function editUserInfo() {
     //Enable the form fields
     document.getElementById('personalInfoFields').disabled = false;
+    document.getElementById('save-button').disabled = false;
+    document.getElementById('edit-button').disabled = true;
 }
 
 
@@ -86,6 +88,8 @@ function saveUserInfo() {
         })
 
     document.getElementById('personalInfoFields').disabled = true;
+    document.getElementById('save-button').disabled = true;
+    document.getElementById('edit-button').disabled = false;
 }
 function getBookmarks(user) {
     db.collection("users").doc(user.uid).get()
