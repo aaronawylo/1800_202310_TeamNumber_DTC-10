@@ -65,3 +65,40 @@ async function get_database_from_URL() {
 }
 
 get_database_from_URL();
+
+function saveArticleToProfile(title) {
+    console.log("lulu: ", title);
+    var userId = firebase.auth().currentUser.uid;
+  
+    db.collection("users").doc(userId).get().then((doc) => {
+  
+      if (doc.data().savedArticles.includes(title)) {
+        db.collection("users")
+          .doc(userId)
+          .update({ savedArticles: firebase.firestore.FieldValue.arrayRemove(title) }, { merge: true })
+          .then(() => {
+            console.log("Document successfully written!");
+          })
+          .catch((error) => {
+            console.error("Error writing document: ", error);
+          });
+        document.getElementById("save-" + title).innerHTML = "bookmark_border"
+      }
+  
+      else {
+        db.collection("users")
+          .doc(userId)
+          .update({ savedArticles: firebase.firestore.FieldValue.arrayUnion(title) }, { merge: true })
+          .then(() => {
+            console.log("Document successfully written!");
+          })
+          .catch((error) => {
+            console.error("Error writing document: ", error);
+          })
+        document.getElementById("save-" + title).innerHTML = "bookmark"
+      }
+    }
+    )
+  }
+  
+  
