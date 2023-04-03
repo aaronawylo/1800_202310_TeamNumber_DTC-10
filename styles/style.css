@@ -43,6 +43,21 @@ a:hover {
     border-width: thin
 }
 
+.btn-outline-secondary {
+    color: #ffffff;                           /* contrast to secondary colour */
+    background-color: #6592fd;                /* some secondary colour */
+    border-color: #ffffff;                    /* some accent colour */
+    border-width: thin
+}
+
+.btn-outline-secondary:hover {
+    color: #6592fd;                           /* contrast to secondary colour */
+    background-color: #ffffff;                /* some secondary colour */
+    border-color: #6592fd;                    /* some accent colour */
+    border-width: thin
+}
+
+
 .btn-outline-light:hover {
     color: #6592fd;                           /* contrast to secondary colour */
 }
@@ -64,6 +79,7 @@ a:hover {
 
 .unfilled-btn{ margin-top: 13px;
     background-color: white; 
+    color: #6592fd;
     }
 
 .unfilled-btn>a{text-decoration: none;
