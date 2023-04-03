@@ -119,7 +119,11 @@ body {
 
 .accordion-item{margin-bottom: 10px;}
 .accordion-button{color: white; background-color: #00b3b3;}
-
+.back-button{border:#343090; 
+    background-color: #343090; 
+    color: white;
+margin-top: 20px;
+}
 
 @media screen and (max-width:873px) {
     img{width: 100%;

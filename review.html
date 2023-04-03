@@ -115,8 +115,10 @@
 
   <!-- button to go back -->
   <div class="container">
-    <button id="back" class="unfilled-btn" type="button" onclick="history.back()">
-      Back to Articles
+    <button id="back" class = "back-button" type="button" onclick="history.back()">
+      <span class="material-symbols-outlined" style="font-size: 250%;">
+        arrow_back
+      </span>
 
     </button>
 
@@ -160,8 +162,8 @@
         </div>
 
       <template id=reviewCardTemplate>
-        <div class="col" style="width: 100%; background-color: #343090; color:white">
-          <div class="card shadow-sm" style = "background-color: #343090; color:white">
+        <div class="col" style="width: 100%; background-color: #343090; color:white;">
+          <div class="card shadow-sm" style = "background-color: #343090; color:white; border: solid 1px white;">
             <div class="container">
               <p> Written: <span class="time">..</span></p>
             </div>
