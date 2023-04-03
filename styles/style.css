@@ -5,22 +5,47 @@
 *---------------------------------------------
 */
 .bg-info {
-    background-color: white !important;     /* some secondary colour */
+    background-color: #343090 !important;     /* some secondary colour */
 }
 
-.navbar-light .navbar-brand {
+.navbar-dark {
+    background-color: #6592fd;
     color: white;                           /* contrast to secondary colour */
 }
-a :hover {
-    background-color: rgb(107, 151, 241);
+a:hover {
+    background-color: #8c61ff;
 
 }
 .btn-primary {
     color: white;                           /* contrast to secondary colour */
     font-size: 100%;
-    background-color: #0d6efd;                /* some secondary colour */
+    background-color: #6592fd;                /* some secondary colour */
     border-color: #ffffff;                    /* some accent colour */
     border-width: thin
+    
+}
+
+
+
+.btn-primary:hover{
+    background-color: #8c61ff;                /* some secondary colour */
+    border-color: #ffffff;                    /* some accent colour */
+    border-width: thin
+}
+
+.dropdown-menu {
+    background-color: #6592fd;   
+    color: #ffffff;             /* some secondary colour */
+}
+
+.dropdown-item:hover {
+    background-color: #8c61ff;   
+    color: #ffffff;             /* some secondary colour */
+}
+
+.dropdown-toggle:hover {
+    background-color: #8c61ff;   
+    color: #ffffff;             /* some secondary colour */
 }
 
 .unfilled-btn{ margin-top: 13px;
@@ -31,7 +56,8 @@ a :hover {
     color: black;}
     
 body {
-    background-color: white;                /* some primary colour */
+    background-color: #343090;
+    color: white                /* some primary colour */
 }
 
 .navbar a{color: white;}
@@ -69,19 +95,5 @@ body {
 }
 
 :root {
-    --bs-secondary-color: #44c2fd;
-}
-
-.carousel-inner {
-    width: 100%;
-    height: 100%;
-    background-color: #ff0000;
-    overflow: hidden;
-    position: relative;
-    margin: 0 auto;
-    padding: 0;
-    box-sizing: border-box;
-    /* border: 1px solid #e70000; */
-    border-radius: 5px;
-    /* box-shadow: 0 0 10px rgba(255, 0, 0, 0.5); */
+    --bs-secondary-color: #5f59f7;
 }
