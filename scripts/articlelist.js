@@ -151,7 +151,7 @@ function displayCardsDynamically(collection) {
         });
       });
 
-    db.collection("finance").where("tag", "array-contains", collection)
+    db.collection("finance").where("tags", "array-contains", collection)
       .get() //the collection
       .then((allArticle) => {
         allArticle.forEach((doc) => {
