@@ -5,16 +5,19 @@
 *---------------------------------------------
 */
 .bg-info {
-    background-color: #343090 !important;     /* some secondary colour */
+    background-color: #343090 !important;
+    /* some secondary colour */
 }
 
 .navbar-dark {
     background-color: #6592fd;
-    color: white;                           /* contrast to secondary colour */
+    color: white;
+    /* contrast to secondary colour */
 }
 
 a {
-    color: #ffffff !important;                           /* contrast to secondary colour */
+    color: #ffffff !important;
+    /* contrast to secondary colour */
     background-color: #6592fd;
 }
 
@@ -23,74 +26,97 @@ a:hover {
     color: #6592fd !important;
 
 }
+
 .btn-primary {
-    color: white;                           /* contrast to secondary colour */
+    color: white;
+    /* contrast to secondary colour */
     font-size: 100%;
-    background-color: #6592fd;                /* some secondary colour */
-    border-color: #ffffff;                    /* some accent colour */
+    background-color: #6592fd;
+    /* some secondary colour */
+    border-color: #ffffff;
+    /* some accent colour */
     border-width: thin
-    
 }
 
 .dropdown-item {
-    color: white;                           /* contrast to secondary colour */
-    background-color: #6592fd;                /* some secondary colour */
+    color: white;
+    /* contrast to secondary colour */
+    background-color: #6592fd;
+    /* some secondary colour */
 }
 
-.btn-primary:hover{
-    background-color: #ffffff;                /* some secondary colour */
-    border-color: #6592fd;                    /* some accent colour */
+.btn-primary:hover {
+    background-color: #ffffff;
+    /* some secondary colour */
+    border-color: #6592fd;
+    /* some accent colour */
     border-width: thin
 }
 
 .btn-outline-secondary {
-    color: #ffffff;                           /* contrast to secondary colour */
-    background-color: #6592fd;                /* some secondary colour */
-    border-color: #ffffff;                    /* some accent colour */
+    color: #ffffff;
+    /* contrast to secondary colour */
+    background-color: #6592fd;
+    /* some secondary colour */
+    border-color: #ffffff;
+    /* some accent colour */
     border-width: thin
 }
 
 .btn-outline-secondary:hover {
-    color: #6592fd;                           /* contrast to secondary colour */
-    background-color: #ffffff;                /* some secondary colour */
-    border-color: #6592fd;                    /* some accent colour */
+    color: #6592fd;
+    /* contrast to secondary colour */
+    background-color: #ffffff;
+    /* some secondary colour */
+    border-color: #6592fd;
+    /* some accent colour */
     border-width: thin
 }
 
 
 .btn-outline-light:hover {
-    color: #6592fd;                           /* contrast to secondary colour */
+    color: #6592fd;
+    /* contrast to secondary colour */
 }
 
 .dropdown-menu {
-    background-color: #6592fd;   
-    color: #ffffff;             /* some secondary colour */
+    background-color: #6592fd;
+    color: #ffffff;
+    /* some secondary colour */
 }
 
 .dropdown-item:hover {
-    background-color: #ffffff;   
-    color: #6592fd;             /* some secondary colour */
+    background-color: #ffffff;
+    color: #6592fd;
+    /* some secondary colour */
 }
 
 .dropdown-toggle:hover {
-    background-color: #ffffff;   
-    color: #6592fd;             /* some secondary colour */
+    background-color: #ffffff;
+    color: #6592fd;
+    /* some secondary colour */
 }
 
-.unfilled-btn{ margin-top: 13px;
-    background-color: white; 
+.unfilled-btn {
+    margin-top: 13px;
+    background-color: white;
     color: #6592fd;
-    }
+}
 
-.unfilled-btn>a{text-decoration: none;
-    color: #6592fd;}
-    
+.unfilled-btn>a {
+    text-decoration: none;
+    color: #6592fd;
+}
+
 body {
     background-color: #343090;
-    color: white                /* some primary colour */
+    color: white
+        /* some primary colour */
 }
 
-.navbar a{color: white;}
+.navbar a {
+    color: white;
+}
 
 .nav-link {
     color: white;
@@ -102,34 +128,68 @@ body {
         'wght' 400,
         'GRAD' 0,
         'opsz' 48
-
 }
 
 #name-goes-here {
     text-transform: capitalize;
 }
 
-#article-title{margin-top: 1%; 
+#article-title {
+    margin-top: 1%;
     font-size: 400%;
 }
 
-.footer-text{padding: 2%;}
-.footer-text h1{padding-bottom: 2%; border-bottom: lightgrey solid 2px;}
-.footer-text a{padding-bottom: 10px}
+.footer-text {
+    padding: 2%;
+}
 
-.accordion-item{margin-bottom: 10px;}
-.accordion-button{color: white; background-color: #00b3b3;}
-.back-button{border:#343090; 
-    background-color: #343090; 
+.footer-text h1 {
+    padding-bottom: 2%;
+    border-bottom: lightgrey solid 2px;
+}
+
+.footer-text a {
+    padding-bottom: 10px
+}
+
+.accordion-item {
+    margin-bottom: 10px;
+}
+
+.accordion-button {
     color: white;
-margin-top: 20px;
+    background-color: #00b3b3;
+}
+
+.back-button {
+    border: #343090;
+    background-color: #343090;
+    color: white;
+    margin-top: 20px;
 }
 
 @media screen and (max-width:873px) {
-    img{width: 100%;
-        height: auto;}
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
 
-    
+/* @media screen and (max-width:1000px) {
+    svg {
+        width: 900px;
+        height: 450px;
+    }
+
+} */
+
+@media screen and (max-width:600px) {
+    svg {
+        width: 100%;
+        height: 800px;
+    }
+
+
 }
 
 :root {
