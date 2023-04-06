@@ -3,29 +3,19 @@
   <head>
     <title>My BCIT Project</title>
     <meta name="comp1800 template" content="My 1800 App" />
-
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Bootstrap Library CSS CDN go here -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <!-- Boostrap Library JS CDN  go here -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
-
-    <!-- Other libraries go here -->
-
-    <!-- Firebase 8 Lbrary related CSS, JS, JQuery go here-->
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
@@ -36,8 +26,6 @@
       rel="stylesheet"
       href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css"
     />
-
-    <!-- Link to styles of your own -->
     <link rel="stylesheet" href="./styles/style.css" />
     <link
       rel="stylesheet"
@@ -56,65 +44,27 @@
       label {
         font-size: 25px;
       }
-
       input:checked ~ label {
         color: gold;
       }
-
       label:hover,
       label:hover ~ label {
         color: gold;
       }
-
       input:checked ~ label:hover,
       input:checked ~ label:hover ~ label {
         color: gold !important;
       }
-
       input:disabled {
     color: rgb(139, 139, 139);
 }
     </style>
   </head>
-
   <body>
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
-
-    <!-- Navbar goes here -->
     <nav id="navbarPlaceholder"></nav>
-
-    <!-- Main content goes here -->
     <main>
       <section style="background-color: #5f59f7">
         <div class="container py-5">
-          <!-- <div class="row"> -->
-            <!-- <div class="col-lg-4">
-              <div class="card mb-4">
-                <div class="card-body text-center">
-                  <img
-                    src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80"
-                    alt="avatar"
-                    class="rounded-circle img-fluid"
-                    style="width: 150px"
-                  />
-                  <h5 class="my-3">Nick O’Brian</h5>
-                  <p class="text-muted mb-1">Full-time Student</p>
-                  <p class="text-muted mb-4">Downtown, Vancouver, BC</p>
-                  <div class="d-flex justify-content-center mb-2">
-                    <button type="button" class="btn btn-primary">
-                      Manage Account
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="card mb-4 mb-lg-0">
-                <div class="card-body p-0">
-                  <ul class="list-group list-group-flush rounded-3"></ul>
-                </div>
-              </div>
-            </div> -->
             <div class="col-lg-8" style="display: flex; flex-direction: column; align-items: center; width: 100%; background-color: #343090;">
               <div class="card mb-4" style="display: flex; width:100%; background-color: #343090; color:white">
                 <fieldset class="mb-3" id="personalInfoFields" disabled>
@@ -122,12 +72,10 @@
                   <div class="row">
                     <div class="col-sm-3">
                       <p class="mb-0">Full Name</p>
-                    </div>
-                    
+                    </div>                   
                     <div class="col-sm-9">
                       <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
-                    </div>
-                  
+                    </div>                
                   </div>
                   <hr />
                   <div class="row">
@@ -142,12 +90,10 @@
                   <div class="row">
                     <div class="col-sm-3">
                       <p class="mb-0">Phone</p>
-                    </div>
-                    
+                    </div>                
                     <div class="col-sm-9">
                       <input type="text" id="phoneInput" class="form-control" placeholder="Enter your home number">
                     </div>
-                  
                   </div>
                   <hr />
                   <div class="row">
@@ -162,30 +108,23 @@
                   <div class="row">
                     <div class="col-sm-3">
                       <p class="mb-0">Address</p>
-                    </div>
-                    
+                    </div>               
                     <div class="col-sm-9">
                       <input type="text" id="addressInput" class="form-control" placeholder="Enter your address">
-                  </div>
-                
+                  </div>               
                 </div>
               </fieldset>
                 <div class="d-flex justify-content-end mt-5">
                   <button type="button" class="btn btn-secondary" id = "edit-button" onclick="editUserInfo()" style="margin: 10px; padding-left: 27px;padding-right: 27px">Edit</button>
                   <span style="width: 10px"></span>
                   <button type="button" class="btn btn-primary" id = "save-button" onclick="saveUserInfo()"style="margin: 10px;" disabled>Save</button>
-              </div>
-              
+              </div>             
             </div>
               <div
-                class="d-flex justify-content-between align-items-center mb-4"
-              >
-                <p class="lead fw-normal mb-0">Saved Articles</p>
-              
+                class="d-flex justify-content-between align-items-center mb-4">
+                <p class="lead fw-normal mb-0">Saved Articles</p>         
               </div>
-
               <div id = "articleCardGroup"></div>
-
               <template id="cardTemplate">
                 <div class="col" style = "margin-bottom: 16px; background-color:  #343090; color:white">
                   <div class="card shadow-sm">
@@ -195,14 +134,12 @@
                         Lorem 
                       </p>
                       <div
-                        class="d-flex justify-content-between align-items-center"
-                      >
+                        class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                           <a href="" class="view-article-button">
                           <button
                             type="button"
-                            class="btn btn-sm btn-outline-secondary"
-                          >
+                            class="btn btn-sm btn-outline-secondary">
                             View
                           </button>
                           </a>
@@ -211,11 +148,9 @@
                               Review
                             </button>
                           </a>
-            
                           <button
                             type="button"
-                            class="btn btn-sm btn-outline-secondary remove-button"
-                          >
+                            class="btn btn-sm btn-outline-secondary remove-button">
                             Remove
                           </button>
                         </div>
@@ -229,14 +164,7 @@
         </div>
       </section>
     </main>
-
-    <!-- This is the footer -->
     <nav id="footerPlaceholder"></nav>
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
-
-    <!-- Link to scripts of your own -->
     <script src="./scripts/script.js"></script>
     <script src="./scripts/skeleton.js"></script>
     <script src="./scripts/firebaseAPI_Team10.js"></script>
