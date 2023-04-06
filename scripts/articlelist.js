@@ -28,6 +28,7 @@ function displayCardsDynamically(collection) {
         allArticle.forEach((doc) => {  
           var title = doc.data().name; 
           var paragraph = doc.data().paragraph; 
+          var website = doc.data().url;
           var docID = doc.id;
           let newcard = cardTemplate.content.cloneNode(true);
           console.log(doc.data().tags);   
