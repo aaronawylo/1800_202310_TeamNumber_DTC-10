@@ -5,16 +5,21 @@ firebase.auth().onAuthStateChanged((user) => {
     console.log(currentUser);
   }
 });
+
+// Pull category from url
 function get_database_from_URL() {
   console.log("Calling function")
   const urlParams = new URLSearchParams(window.location.search);
   var category = urlParams.get('category');
   console.log(category);
-  localStorage.setItem("category", category);
   displayCardsDynamically();
   console.log($('#summaryPlaceholder').load(`./text/${category}description.html`));
 }
+
+
 get_database_from_URL();
+
+// Display articles from finance, health, and supplies collection that contain the category in their tags field
 async function displayCardsDynamically() {
   console.log("Calling function")
   const urlParams = new URLSearchParams(window.location.search);
@@ -52,7 +57,7 @@ async function displayCardsDynamically() {
 }
 
 
-
+// Save and delete articles from user profile
 function saveArticleToProfile(title) {
   console.log("lulu: ", title);
   var userId = firebase.auth().currentUser.uid;

@@ -1,3 +1,4 @@
+// display articles from category searched for in search bar
 async function get_database_from_URL() {
     console.log("Calling function")
     const urlParams = new URLSearchParams(window.location.search);

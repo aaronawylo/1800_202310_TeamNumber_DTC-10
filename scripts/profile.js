@@ -1,5 +1,5 @@
-var currentUser;          //put this right after you start script tag before writing any functions.
-function doAll() {
+var currentUser;         
+function run_bookmarks_if_user() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             getBookmarks(user)
@@ -8,7 +8,11 @@ function doAll() {
         }
     });
 }
-doAll();
+
+
+run_bookmarks_if_user()
+
+
 function populateUserInfo() {
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
@@ -41,12 +45,18 @@ function populateUserInfo() {
         }
     });
 }
+
+
 populateUserInfo();
+
+
 function editUserInfo() {
     document.getElementById('personalInfoFields').disabled = false;
     document.getElementById('save-button').disabled = false;
     document.getElementById('edit-button').disabled = true;
 }
+
+
 function saveUserInfo() {
     console.log("inside")
     var userName = document.getElementById("nameInput").value;
@@ -66,6 +76,8 @@ function saveUserInfo() {
     document.getElementById('save-button').disabled = true;
     document.getElementById('edit-button').disabled = false;
 }
+
+// Display saved articles as cards on profile page
 function getBookmarks(user) {
     db.collection("users").doc(user.uid).get()
         .then(userDoc => {
@@ -125,6 +137,8 @@ function getBookmarks(user) {
             });
         })
 }
+
+// Remove saved article from profile page
 function removeArticle(title) {
     console.log("lulu: ", title);
     var userId = firebase.auth().currentUser.uid;

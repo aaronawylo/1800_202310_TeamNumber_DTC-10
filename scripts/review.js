@@ -1,8 +1,8 @@
-var collection = localStorage.getItem("category")
-console.log(collection)
 const urlParams = new URLSearchParams(window.location.search);
 var ID = urlParams.get('docID');
 console.log(ID);
+
+// Change header to article name from database
 function getArticleName(id) {
     db.collection("supplies")
         .doc(id)
@@ -27,6 +27,8 @@ function getArticleName(id) {
         });
 }
 getArticleName(ID);
+
+// save reviews to Firebase
 function writeReview() {
     console.log("inside write review")
     let Rating = document.getElementById("rating").value;
@@ -54,6 +56,8 @@ function writeReview() {
         }
     });
 }
+
+// display reviews from Firebase as cards below input fields
 function populateReviews() {
     let ArticleCardTemplate = document.getElementById("reviewCardTemplate");
     let ArticleCardGroup = document.getElementById("reviewCardGroup");
@@ -74,4 +78,6 @@ function populateReviews() {
             })
         })
 }
+
+
 populateReviews();
