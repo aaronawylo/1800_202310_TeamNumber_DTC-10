@@ -38,7 +38,11 @@ Here are the steps ...
 - read the cards on the carousel
 - click learn more for whatever topic their interested in
 - browse displayed resources
+- look at reviews for any resources that pique their interest
 - click view button or save button for any resources they're interested in
+- visit profile page to view saved articles
+- write review for resources after viewing their website
+
 
 ## 5. Known Bugs and Limitations
 
