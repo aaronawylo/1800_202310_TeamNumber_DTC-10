@@ -28,6 +28,7 @@ List technologies (with version numbers), API's, icons, fonts, images, media or 
 - Bootstrap 5.0 (Frontend library)
 - Firebase 8.0 (BAAS - Backend as a Service)
 - Google Material Icons
+- https://images.unsplash.com for all images
 
 ## 4. Complete setup/installion/usage
 
@@ -49,16 +50,18 @@ Here are the steps ...
 Here are some known bugs:
 
 - Article pages only display one or two articles if the user isnt logged in
-- ...
-- ...
+- One article page header did not load properly even though the rest did
+- Search bar functionality is limited only to the tags we have in our database
 
 ## 6. Features for Future
 
 What we'd like to build in the future:
 
 - Pull resources from some kind of API instead of creating database by ourselves
-- ...
-- ...
+- Allow users to submit their own database
+- Implement a profile photo upload to personalize page more
+- Decorate the article pages with more UI/UX elements
+- A logout feature
 
 ## 7. Contents of Folder
 
