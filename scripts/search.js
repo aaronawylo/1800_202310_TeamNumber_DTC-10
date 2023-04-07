@@ -4,7 +4,7 @@ async function get_database_from_URL() {
     var searchValue = urlParams.get('results');
     console.log(searchValue);
     localStorage.setItem("results", searchValue);
-
+    console.log($('#summaryPlaceholder').load(`./text/${searchValue}description.html`));
     const listofwords = ["finance", "health", "supplies", "heat", "fire", "cold", "earthquake", "flood", "thunderstorm", "wind"]
     console.log("Just before collection population")
     if (listofwords.includes(searchValue.toLowerCase())) {
