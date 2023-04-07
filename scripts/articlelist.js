@@ -13,7 +13,7 @@ function get_database_from_URL() {
   var category = urlParams.get('category');
   console.log(category);
   displayCardsDynamically();
-  console.log($('#summaryPlaceholder').load(`./text/${category}description.html`));
+  console.log($('#summaryPlaceholder').load(`../text/${category}description.html`));
 }
 
 
@@ -41,7 +41,7 @@ async function displayCardsDynamically() {
       newcard.querySelector(".card-text").innerHTML = paragraph;
       newcard.querySelector(".view-article-button").href = website;
       newcard.querySelector(".review-article-button").href =
-        "review.html?docID=" + docID;
+        "../user_interaction/review.html?docID=" + docID;
       newcard.querySelector("i").id = "save-" + docID;
       newcard.querySelector("i").onclick = () =>
         saveArticleToProfile(docID);

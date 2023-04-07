@@ -5,7 +5,7 @@ async function get_database_from_URL() {
     var searchValue = urlParams.get('results');
     console.log(searchValue);
     localStorage.setItem("results", searchValue);
-    console.log($('#summaryPlaceholder').load(`./text/${searchValue}description.html`));
+    console.log($('#summaryPlaceholder').load(`../text/${searchValue}description.html`));
     const listofwords = ["finance", "health", "supplies", "heat", "fire", "cold", "earthquake", "flood", "thunderstorm", "wind"]
     console.log("Just before collection population")
     if (listofwords.includes(searchValue.toLowerCase())) {
@@ -24,7 +24,7 @@ async function get_database_from_URL() {
                 newcard.querySelector(".card-text").innerHTML = paragraph;
                 newcard.querySelector(".view-article-button").href = website;
                 newcard.querySelector(".review-article-button").href =
-                    "review.html?docID=" + docID;
+                    "../user_interaction/review.html?docID=" + docID;
                 newcard.querySelector("i").id = "save-" + docID;
                 newcard.querySelector("i").onclick = () =>
                     saveArticleToProfile(docID);

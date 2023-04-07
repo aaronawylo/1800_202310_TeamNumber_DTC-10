@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <title>My BCIT Project</title>
   <meta name="comp1800 template" content="My 1800 App" />
@@ -18,7 +17,7 @@
   <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
   <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="../styles/style.css" />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <style>
@@ -76,46 +75,45 @@
     }
   </style>
 </head>
+
 <body>
   <nav id="navbarPlaceholder"></nav>
   <section id="summaryPlaceholder"></section>
   <main>
-<div class="container">
-  <div id="article-go-here" class="row row-cols-auto">
-  </div>
-</div>
-<template id="articleCardTemplate">
-  <div class="card shadow-sm py-2 mx-2" style="width: 19rem; margin-bottom: 16px; color: white; background-color: #8c61ff;">
-    <div class="card-body">
-      <h3 class="card-title">Article Name</h3>
-      <p class="card-text">
-        Placeholder text.
-      </p>
-      <div class="d-flex justify-content-between align-items-center">
-        <div class="btn-group">
-          <a href="" class="view-article-button">
-            <button type="button" class="btn btn-sm btn-outline-light" id="view-article-button">
-              View
-            </button>
-          </a>
-          <a href="" class="review-article-button">
-            <button type="button" class="btn btn-sm btn-outline-light" id="review-button">
-              Review
-            </button>
-          </a>
-          <i class="material-icons">bookmark_border</i>
-        </div>
+    <div class="container">
+      <div id="article-go-here" class="row row-cols-auto" style="color: white;">
       </div>
-      <div class="d-flex justify-content-between align-items-center"></div>
     </div>
+    <template id="articleCardTemplate">
+      <div class="card shadow-sm py-2 mx-2" style="width: 19rem; margin-bottom: 16px; color: white; background-color: #8c61ff;">
+        <div class="card-body">
+          <h3 class="card-title">Article Name</h3>
+          <p class="card-text">
+            Placeholder text.
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="" class="view-article-button">
+                <button type="button" class="btn btn-sm btn-outline-light" id="view-article-button">
+                  View
+                </button>
+              </a>         
+              <a href="" class="review-article-button">
+                <button type="button" class="btn btn-sm btn-outline-light" id="review-button">
+                  Review
+                </button>
+              </a>
+              <i class="material-icons">bookmark_border</i>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between align-items-center"></div>
+        </div>
       </div>
     </template>
   </main>
   <nav id="footerPlaceholder"></nav>
-  <script src="./scripts/script.js"></script>
-  <script src="./scripts/skeleton.js"></script>
-  <script src="./scripts/firebaseAPI_Team10.js"></script>
-  <script src="./scripts/search.js"></script>
-  <script src="./scripts/main.js"></script>
+  <script src="../scripts/skeleton.js"></script>
+  <script src="../scripts/firebaseAPI_Team10.js"></script>
+  <script src="../scripts/articlelist.js"></script>
 </body>
 </html>

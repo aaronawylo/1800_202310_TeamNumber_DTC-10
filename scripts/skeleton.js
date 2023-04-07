@@ -1,6 +1,6 @@
 function loadSkeleton() {
-    console.log($('#navbarPlaceholder').load('./text/nav.html', activateDropdown)); 
-    console.log($('#footerPlaceholder').load('./text/footer.html'));
+    console.log($('#navbarPlaceholder').load('../text/nav.html', activateDropdown)); 
+    console.log($('#footerPlaceholder').load('../text/footer.html'));
 }
 
 
@@ -10,7 +10,7 @@ loadSkeleton();
 function activateDropdown() {
     $('.dropdown-item').click(function () {
         console.log($(this).text());
-        window.location.href = "./articlelist.html?category=" + $(this).text().toLowerCase();
+        window.location.href = "../article_pages/articlelist.html?category=" + $(this).text().toLowerCase();
     });
 }
 
@@ -26,7 +26,7 @@ function buttonforSearch() {
         const listofwords = ["finance", "health", "supplies", "heat", "fire", "cold", "earthquake", "flood", "thunderstorm", "wind"]
         if (listofwords.includes(searchword.toLowerCase())) {
             console.log(searchword.toLowerCase());
-            window.location.href = "./search.html?results=" + searchword.toLowerCase();
+            window.location.href = "../article_pages/search.html?results=" + searchword.toLowerCase();
         }
         else {
             return false;
@@ -45,7 +45,7 @@ function onSubmit() {
             const listofwords = ["finance", "health", "supplies", "heat", "fire", "cold", "earthquake", "flood", "thunderstorm", "wind"]
             if (listofwords.includes(searchword.toLowerCase())) {
                 console.log(searchword.toLowerCase());
-                window.location.href = "./search.html?results=" + searchword.toLowerCase();
+                window.location.href = "../article_pages/search.html?results=" + searchword.toLowerCase();
             }
             else {
                 return false;
