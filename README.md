@@ -50,7 +50,6 @@ Here are the steps ...
 Here are some known bugs:
 
 - Article pages only display one or two articles if the user isnt logged in
-- One article page header did not load properly even though the rest did
 - Search bar functionality is limited only to the tags we have in our database
 
 ## 6. Features for Future
